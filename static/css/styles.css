@@ -1,11 +1,13 @@
 :root {
-    --primary-color: #f37154; /* Coral/Orange from mockup */
-    --primary-light: #fbeee8;
-    --dark-color: #2c3e50;
-    --text-color: #4a5568;
-    --light-bg: #f8f9fc; /* Super light cool gray for dashboard bg */
+    --primary-color: #f37154;
+    --primary-light: rgba(243, 113, 84, 0.2);
+    --dark-color: #ffffff;
+    --text-color: #cbd5e0;
+    --light-bg: rgba(15, 15, 15, 0.8);
+    --panel-bg: rgba(25, 25, 25, 0.75);
+    --card-bg: rgba(40, 40, 40, 0.85);
     --white: #ffffff;
-    --border-color: #edf2f7;
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -15,9 +17,13 @@
 }
 
 body {
-    background-color: var(--light-bg);
+    background-color: #111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('../img/restaurant_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: \'Poppins\', sans-serif;
     height: 100vh;
     overflow: hidden;
 }
@@ -69,7 +75,7 @@ body {
 }
 
 .sidebar-nav a:hover {
-    background-color: #fff;
+    background-color: var(--card-bg);
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
@@ -81,7 +87,7 @@ body {
 
 .sidebar-promo {
     margin-top: auto;
-    background: #fff;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -129,7 +135,7 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: var(--card-bg);
     padding: 12px 20px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
@@ -142,7 +148,7 @@ body {
     font-size: 0.95rem;
     margin-left: 10px;
     width: 100%;
-}
+ color: var(--text-color); background: transparent; }
 
 .filter-btn {
     background: var(--primary-color);
@@ -193,7 +199,7 @@ body {
 .categories-carousel::-webkit-scrollbar { display: none; }
 
 .category-chip {
-    background: #fff;
+    background: var(--card-bg);
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
@@ -226,7 +232,7 @@ body {
     font-size: 1.1rem;
 }
 .category-chip.active .icon {
-    background: #fff;
+    background: var(--card-bg);
 }
 
 .food-grid-section .tabs {
@@ -266,7 +272,7 @@ body {
 }
 
 .food-card {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.03);
@@ -349,7 +355,7 @@ body {
 
 /* Sidebar Right - Invoice */
 .sidebar-right {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 30px;
     padding: 30px;
     display: flex;
@@ -382,7 +388,7 @@ body {
 }
 
 .invoice-item img {
-    width: 50px; height: 50px; object-fit: contain; background: #fff; border-radius: 10px;
+    width: 50px; height: 50px; object-fit: contain; background: var(--card-bg); border-radius: 10px;
 }
 
 .invoice-info h4 {
@@ -427,7 +433,7 @@ body {
 
 .method-btn {
     flex: 1;
-    background: #fff;
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 10px 0;
@@ -489,7 +495,7 @@ body {
 .chatbot-window {
     width: 350px;
     height: 500px;
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     display: none;
@@ -524,7 +530,7 @@ body {
 .user-message { background: var(--primary-color); color: white; margin-left: auto; border-radius: 15px 15px 0 15px; }
 
 .chat-input {
-    padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; background: white;
+    padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; background: var(--card-bg);
 }
 .chat-input input {
     flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 25px; outline: none;
@@ -549,7 +555,7 @@ body {
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
     width: 90%;
@@ -569,7 +575,7 @@ body {
 
 /* Live Tracking Map Design */
 .tracker-live-container {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.03);
     margin-bottom: 30px;
@@ -579,7 +585,7 @@ body {
 
 .tracker-info-panel {
     padding: 30px;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 0 0 20px 20px;
 }
 
@@ -644,7 +650,7 @@ body {
 .v-step .icon {
     width: 30px;
     height: 30px;
-    background: #fff;
+    background: var(--card-bg);
     border: 2px solid #e2e8f0;
     border-radius: 50%;
     display: flex;
@@ -652,7 +658,7 @@ body {
     justify-content: center;
     font-size: 1rem;
     color: #a0aec0;
-    background: white;
+    background: var(--card-bg);
 }
 
 .v-step.active .icon {
@@ -686,7 +692,7 @@ body {
 
 /* Feedback Section */
 .feedback-card {
-    background: #fff;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.02);
@@ -738,7 +744,7 @@ body {
 }
 
 .history-card {
-    background: #fff;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
