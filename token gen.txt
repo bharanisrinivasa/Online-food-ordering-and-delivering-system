@@ -1,0 +1,149 @@
+curl -X POST http://localhost:5000/api/orders -H "Content-Type: application/json" -d "{\"user_id\": \"U001\", \"restaurant_id\": \"R001\", \"items\": [{\"name\": \"Pizza\", \"price\": 12.99}], \"address\": \"123 Main St\", \"payment_method\": \"credit_card\"}"
+
+
+mkdir foodtrack
+cd foodtrack
+Create the file structure:
+Manually create the following structure or use commands:
+
+bash
+
+Collapse
+
+Wrap
+
+Copy
+mkdir static static/css static/js static/images templates
+touch static/css/styles.css static/js/main.js static/js/chatbot.js templates/index.html app.py
+Alternatively, you can copy-paste the provided code into these files:
+
+templates/index.html
+static/css/styles.css
+static/js/main.js
+static/js/chatbot.js
+app.py
+Step 2: Set Up a Virtual Environment
+A virtual environment isolates dependencies for this project.
+
+Create a virtual environment:
+
+bash
+
+Collapse
+
+Wrap
+
+Copy
+python -m venv venv
+Activate the virtual environment:
+
+On Windows:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+venv\Scripts\activate
+On macOS/Linux:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+source venv/bin/activate
+You should see (venv) in your terminal prompt.
+
+Step 3: Install Dependencies
+The Flask app requires several Python packages. Install them using pip.
+
+Install required packages:
+
+bash
+
+Collapse
+
+Wrap
+
+Copy
+pip install flask flask-socketio flask-cors geopy requests
+flask: Web framework.
+flask-socketio: Real-time communication for live tracking and chatbot.
+flask-cors: Cross-Origin Resource Sharing support.
+geopy: For calculating distances in the driver simulation.
+requests: For making HTTP requests (if needed later).
+Optional (for advanced chatbot):
+If you want to add an NLP-based chatbot:
+
+bash
+
+Collapse
+
+Wrap
+
+Copy
+pip install transformers torch
+Step 4: Verify the Setup
+Ensure all files are in place and dependencies are installed.
+
+List installed packages:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+pip list
+You should see flask, flask-socketio, flask-cors, geopy, etc.
+Check file structure:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+dir  # Windows
+ls   # macOS/Linux (if supported by your shell)
+Expected output should include app.py, static/, templates/, and venv/.
+Step 5: Run the Application
+Start the Flask server with Socket.IO support.
+
+Run the app:
+
+bash
+
+Collapse
+
+Wrap
+
+Copy
+python app.py
+Output should show something like:
+text
+
+Collapse
+
+Wrap
+
+Copy
+* Serving Flask app "app" (lazy loading)
+* Environment: development
+* Debug mode: on
+* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+Access the app:
+Open a web browser and go to:
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+http://localhost:5000
+You should see the FoodTrack homepage.

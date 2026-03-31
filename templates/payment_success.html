@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - FoodTrack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f37154;
+            --light-bg: #f8f9fc;
+            --dark-color: #2c3e50;
+            --text-color: #4a5568;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--text-color);
+        }
+        .receipt-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #e8f5e9;
+            color: #2ecc71;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+        }
+        h2 { margin: 0 0 10px; color: var(--dark-color); }
+        .order-id { font-size: 0.9rem; color: #a0aec0; margin-bottom: 30px; }
+        .receipt-details {
+            border-top: 1px dashed #cbd5e0;
+            border-bottom: 1px dashed #cbd5e0;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .row {
+            display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem;
+        }
+        .total-row {
+            display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; color: var(--primary-color);
+        }
+        .btn-home {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .btn-home:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="receipt-card">
+        <div class="success-icon">✓</div>
+        <h2>Payment Successful!</h2>
+        <div class="order-id">Transaction ID: #FTX-982374</div>
+        
+        <div class="receipt-details">
+            <div class="row">
+                <span>Date</span>
+                <span id="dateStr">Today</span>
+            </div>
+            <div class="row">
+                <span>Payment Method</span>
+                <span>Mastercard **** 1234</span>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <span>Sub Total</span>
+                <span id="receiptSubTotal">₹0</span>
+            </div>
+            <div class="row">
+                <span>Tax</span>
+                <span>₹50.00</span>
+            </div>
+        </div>
+        
+        <div class="total-row">
+            <span>Amount Paid</span>
+            <span id="receiptTotal">₹0</span>
+        </div>
+
+        <p style="font-size: 0.85rem; margin: 30px 0;">Your delicious food is on its way. Track your order on the dashboard!</p>
+        <a href="/" class="btn-home">Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Grab totals from URL parameters if passed, or fallback
+        const urlParams = new URLSearchParams(window.location.search);
+        const total = urlParams.get('total') || '0';
+        const sub = urlParams.get('sub') || '0';
+        
+        document.getElementById('receiptTotal').textContent = '₹' + total;
+        document.getElementById('receiptSubTotal').textContent = '₹' + sub;
+        
+        const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        document.getElementById('dateStr').textContent = dateStr;
+    </script>
+</body>
+</html>
